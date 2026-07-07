@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard · VitaLink</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar" id="side"></aside>
+  <main class="main">
+    <div class="main-inner">
+
+      <div class="topbar fade-in">
+        <div class="topbar-head">
+          <h1>Good morning, Rohit.</h1>
+          <p>Here's a snapshot of your health today.</p>
+        </div>
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input placeholder="Search records, providers, meds…" />
+        </div>
+      </div>
+
+      <div class="stat-grid fade-in d1">
+        <div class="stat">
+          <div class="stat-label">
+            <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+            Resting HR
+          </div>
+          <div class="stat-value">64<span class="stat-unit">bpm</span></div>
+          <div class="stat-trend trend-down">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            3 bpm vs last week
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">
+            <span class="stat-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            Sleep
+          </div>
+          <div class="stat-value">7h 24m</div>
+          <div class="stat-trend trend-up">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+            22 min above avg
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">
+            <span class="stat-icon navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></span>
+            Steps
+          </div>
+          <div class="stat-value">7,231</div>
+          <div class="stat-trend trend-up">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+            72% of goal
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">
+            <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-4 5-6 8-6 12a6 6 0 0 0 12 0c0-4-2-7-6-12z"/></svg></span>
+            Hydration
+          </div>
+          <div class="stat-value">1.4<span class="stat-unit">L</span></div>
+          <div class="stat-trend trend-down">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            Below 2L target
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-grid fade-in d2">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h3>Weekly activity</h3>
+              <p class="sub">Steps · past 7 days</p>
+            </div>
+            <a href="#">View report →</a>
+          </div>
+          <div class="chart">
+            <div class="bar" style="height:35%"></div>
+            <div class="bar" style="height:62%"></div>
+            <div class="bar" style="height:48%"></div>
+            <div class="bar" style="height:80%"></div>
+            <div class="bar" style="height:55%"></div>
+            <div class="bar accent" style="height:90%"></div>
+            <div class="bar" style="height:72%"></div>
+          </div>
+          <div class="chart-labels">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Today</span>
+          </div>
+          <div class="insight">
+            <div class="insight-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1z"/></svg>
+            </div>
+            <div class="insight-body">
+              <strong>Insight:</strong> your best step days follow nights with 7h+ sleep. Try a 10:30pm wind-down tonight to keep the streak going.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Upcoming</h3><a href="#">All →</a></div>
+          <div class="list-row">
+            <div class="list-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div class="list-body">
+              <div class="list-title">Dr. Patel · Cardiology</div>
+              <div class="list-sub">Tomorrow · 10:30 AM · Video</div>
+            </div>
+          </div>
+          <div class="list-row">
+            <div class="list-icon green"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="list-body">
+              <div class="list-title">Vitamin D3 · 1000 IU</div>
+              <div class="list-sub">Today · 8:00 PM</div>
+            </div>
+          </div>
+          <div class="list-row">
+            <div class="list-icon navy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="list-body">
+              <div class="list-title">Lipid panel results</div>
+              <div class="list-sub">Available · Thursday</div>
+            </div>
+          </div>
+          <div class="list-row">
+            <div class="list-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg></div>
+            <div class="list-body">
+              <div class="list-title">Annual physical</div>
+              <div class="list-sub">Due in 3 weeks</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel fade-in d3">
+        <div class="panel-head">
+          <div>
+            <h3>Recent activity</h3>
+            <p class="sub">Everything happening across your connected providers</p>
+          </div>
+          <a href="/pages/records.html">Open records →</a>
+        </div>
+        <div class="list-row">
+          <div class="list-icon green"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="list-body">
+            <div class="list-title">CBC lab results uploaded</div>
+            <div class="list-sub">Quest Diagnostics · All markers in normal range</div>
+          </div>
+          <div class="list-meta">2h ago</div>
+        </div>
+        <div class="list-row">
+          <div class="list-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <div class="list-body">
+            <div class="list-title">Prescription refilled: Vitamin D3</div>
+            <div class="list-sub">CVS Pharmacy · Ready for pickup</div>
+          </div>
+          <div class="list-meta">Yesterday</div>
+        </div>
+        <div class="list-row">
+          <div class="list-icon navy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.5 0 2.9.37 4.14 1.02"/></svg></div>
+          <div class="list-body">
+            <div class="list-title">Vision exam summary</div>
+            <div class="list-sub">Dr. Zhou · Prescription updated</div>
+          </div>
+          <div class="list-meta">3 days ago</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="/assets/app.js"></script>
+</body>
+</html>

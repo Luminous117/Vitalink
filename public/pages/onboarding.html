@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome · VitaLink</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+
+<div class="onboard-wrap">
+  <div class="onboard-card fade-in">
+    <a href="/" class="brand">
+      <img src="/assets/logo.svg" alt="VitaLink" />
+      <span>VitaLink</span>
+    </a>
+    <div class="progress-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <h1>Welcome to your <span class="serif">health hub.</span></h1>
+    <p>Create an account in under a minute. No credit card required.</p>
+
+    <form class="onboard-form" onsubmit="event.preventDefault(); window.location='/pages/dashboard.html'">
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" type="text" placeholder="Rohit Mahajan" required />
+      </div>
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" required />
+      </div>
+      <div class="field">
+        <label for="pass">Create a passphrase</label>
+        <input id="pass" type="password" placeholder="At least 12 characters" required minlength="12" />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:12px;">Continue →</button>
+    </form>
+
+    <p class="legal">
+      By continuing, you agree to VitaLink's <a href="#">Terms</a> and <a href="#">Privacy Policy</a>. Your health data is encrypted end-to-end — we can't read it.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Providers · VitaLink</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar" id="side"></aside>
+  <main class="main">
+    <div class="main-inner">
+
+      <div class="topbar fade-in">
+        <div class="topbar-head">
+          <h1>My care team</h1>
+          <p>Providers, pharmacies, and services connected to your VitaLink.</p>
+        </div>
+        <button class="btn btn-primary">+ Add provider</button>
+      </div>
+
+      <div class="provider-grid fade-in d1">
+        <div class="provider">
+          <div class="provider-logo">MP</div>
+          <h4>Dr. Meera Patel</h4>
+          <p>Cardiology · Bay Health</p>
+          <span class="badge green">Connected</span>
+        </div>
+        <div class="provider">
+          <div class="provider-logo navy">QD</div>
+          <h4>Quest Diagnostics</h4>
+          <p>Laboratory network</p>
+          <span class="badge green">Connected</span>
+        </div>
+        <div class="provider">
+          <div class="provider-logo green">CV</div>
+          <h4>CVS Pharmacy</h4>
+          <p>Main Street · 0.4 mi away</p>
+          <span class="badge green">Connected</span>
+        </div>
+        <div class="provider">
+          <div class="provider-logo">LZ</div>
+          <h4>Dr. Lin Zhou</h4>
+          <p>Optometry</p>
+          <span class="badge green">Connected</span>
+        </div>
+        <div class="provider">
+          <div class="provider-logo navy">CR</div>
+          <h4>City Radiology</h4>
+          <p>Imaging center</p>
+          <span class="badge green">Connected</span>
+        </div>
+        <div class="provider" style="border-style: dashed; background: var(--soft-cloud);">
+          <div class="provider-logo subtle">+</div>
+          <h4>Add a provider</h4>
+          <p>Search 30,000+ clinics, hospitals, and pharmacies.</p>
+          <button class="btn btn-outline">Browse directory</button>
+        </div>
+      </div>
+
+      <div class="panel fade-in d2">
+        <div class="panel-head">
+          <div>
+            <h3>Sharing & access</h3>
+            <p class="sub">Time-limited links you've created to share your records</p>
+          </div>
+          <button class="btn btn-outline">+ Create link</button>
+        </div>
+        <div class="list-row">
+          <div class="list-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+          <div class="list-body">
+            <div class="list-title">Dr. Alicia Bennett — Second opinion</div>
+            <div class="list-sub">Read-only · Lipid panel + CBC</div>
+          </div>
+          <div class="list-meta"><span class="badge amber">Expires 5d</span></div>
+        </div>
+        <div class="list-row">
+          <div class="list-icon green"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+          <div class="list-body">
+            <div class="list-title">Mom (emergency access)</div>
+            <div class="list-sub">Read-only · Full history · Ongoing</div>
+          </div>
+          <div class="list-meta"><span class="badge green">Active</span></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="/assets/app.js"></script>
+</body>
+</html>

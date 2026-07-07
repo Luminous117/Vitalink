@@ -1,0 +1,10 @@
+{
+  "name": "vitalink",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VitaLink — One link to better health. Prototype web app.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
