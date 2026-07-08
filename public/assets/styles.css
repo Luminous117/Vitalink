@@ -2285,6 +2285,39 @@ body.drawer-open { overflow: hidden; }
 }
 
 /* =============================================================
+   Taft-Hartley industry tag — quiet band between hero and features
+   ============================================================= */
+.industry-band {
+  padding: 8px 0 0;
+  display: flex; justify-content: center;
+}
+.industry-band .container {
+  display: flex; justify-content: center;
+}
+.industry-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 18px; border-radius: 999px;
+  background: rgba(31,174,154,0.08);
+  border: 1px solid rgba(31,174,154,0.28);
+  color: var(--trust-navy);
+  font-size: 13.5px; line-height: 1.4;
+  max-width: 640px; text-align: left;
+}
+.industry-tag svg {
+  width: 18px; height: 18px; flex-shrink: 0;
+  color: var(--health-teal);
+}
+.industry-tag strong { font-weight: 700; }
+[data-theme="dark"] .industry-tag {
+  background: rgba(44,212,184,0.10);
+  border-color: rgba(44,212,184,0.32);
+}
+[data-theme="dark"] .industry-tag svg { color: var(--teal-2); }
+@media (max-width: 600px) {
+  .industry-tag { font-size: 12.5px; padding: 8px 14px; gap: 8px; }
+}
+
+/* =============================================================
    Demo-data notice — slim strip shown on every app page so
    judges/visitors know all metrics are sample data
    ============================================================= */
