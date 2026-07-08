@@ -90,10 +90,10 @@
     listEls.forEach(root => {
       if (!state.length) {
         root.innerHTML = (
-          '<div class="rem-empty">' +
-            '<div class="rem-empty-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>' +
-            '<div style="font-weight:600;color:var(--trust-navy);margin-bottom:4px;">No reminders yet</div>' +
-            '<div>Add your first reminder to get started.</div>' +
+          '<div class="lottie-empty">' +
+            '<lottie-player src="/lotties/ghost.json" background="transparent" speed="1" loop autoplay></lottie-player>' +
+            '<h4>Nothing to do</h4>' +
+            '<p>You\'re all caught up. Add your first reminder on the right.</p>' +
           '</div>'
         );
       } else {

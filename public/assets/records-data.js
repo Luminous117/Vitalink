@@ -173,7 +173,13 @@
       ? RECORDS.filter(r => (r.title + ' ' + r.provider + ' ' + r.type + ' ' + (r.orderedBy || '')).toLowerCase().includes(q))
       : RECORDS.slice();
     items.sort((a, b) => (a.date < b.date ? 1 : -1));
-    listEl.innerHTML = items.map(rowHTML).join('') || '<div class="rem-empty">No records match your search.</div>';
+    listEl.innerHTML = items.map(rowHTML).join('') || (
+      '<div class="lottie-empty">' +
+        '<lottie-player src="/lotties/ghost.json" background="transparent" speed="1" loop autoplay></lottie-player>' +
+        '<h4>No records match</h4>' +
+        '<p>Try a different filter or search term.</p>' +
+      '</div>'
+    );
   }
 
   // ---- Modal ------------------------------------------------------------------
