@@ -75,4 +75,29 @@
   if (window.VitalinkI18n) {
     window.VitalinkI18n.mountPickers();
   }
+
+  // Guest-mode banner: if there's no signed-in user, show a subtle strip at the top
+  // of the main content that explains this is a demo and links to sign-up.
+  if (!user) {
+    var mainInner = document.querySelector(".main .main-inner");
+    if (mainInner && !mainInner.querySelector("[data-guest-banner]")) {
+      var banner = document.createElement("div");
+      banner.setAttribute("data-guest-banner", "");
+      banner.className = "guest-banner";
+      banner.innerHTML =
+        '<div class="guest-banner-dot"></div>' +
+        '<div class="guest-banner-body">' +
+          '<strong>You\'re exploring VitaLink as a guest.</strong> ' +
+          "Every screen is fully clickable. " +
+          '<a href="/pages/onboarding.html">Create a free account →</a> to save your data.' +
+        "</div>" +
+        '<button class="guest-banner-close" aria-label="Dismiss">' +
+          '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>' +
+        "</button>";
+      mainInner.insertBefore(banner, mainInner.firstChild);
+      banner.querySelector(".guest-banner-close").addEventListener("click", function () {
+        banner.remove();
+      });
+    }
+  }
 })();
