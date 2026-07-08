@@ -2338,12 +2338,12 @@ body.drawer-open { overflow: hidden; }
    ============================================================= */
 .side-footer { display: flex; flex-direction: column; }
 .side-footer [data-lang-mount] { order: 1; margin-bottom: 50px !important; }
-.side-footer .theme-toggle { order: 2; margin-top: -25px; }
+.side-footer .theme-toggle { order: 2; margin-bottom: 25px; }
 .side-footer #side-user { order: 3; }
 /* Same treatment inside the mobile marketing drawer */
 .mobile-drawer-controls { display: flex; flex-direction: column; }
 .mobile-drawer-controls [data-lang-mount] { order: 1; margin-bottom: 50px; }
-.mobile-drawer-controls .theme-toggle { order: 2; margin-top: -25px; }
+.mobile-drawer-controls .theme-toggle { order: 2; margin-bottom: 25px; }
 .mobile-drawer-controls .mobile-drawer-cta { order: 3; margin-top: 12px; }
 
 /* =============================================================
