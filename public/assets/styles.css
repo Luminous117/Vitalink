@@ -45,20 +45,56 @@
 
 html { scroll-behavior: smooth; }
 
+html {
+  background: linear-gradient(180deg, #EDF7F5 0%, #F5FAF9 55%, #E9F5F1 100%);
+  transition: background 0.5s ease;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-feature-settings: 'cv11', 'ss01', 'ss03';
   color: var(--trust-navy);
-  background:
-    radial-gradient(65% 55% at 8% 6%, rgba(31,174,154,0.18), transparent 60%),
-    radial-gradient(55% 50% at 96% 4%, rgba(88,194,125,0.16), transparent 60%),
-    radial-gradient(75% 60% at 50% 100%, rgba(221,247,242,0.55), transparent 65%),
-    linear-gradient(180deg, #EDF7F5 0%, #F5FAF9 55%, #E9F5F1 100%);
-  background-attachment: fixed;
+  background: transparent;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+/* Animated aurora — 3 slow-drifting blobs behind everything */
+body::before, body::after {
+  content: ""; position: fixed; inset: -20%;
+  z-index: -1; pointer-events: none;
+  will-change: transform;
+}
+body::before {
+  background:
+    radial-gradient(38% 42% at 15% 22%, rgba(31,174,154,0.32), transparent 60%),
+    radial-gradient(34% 40% at 85% 18%, rgba(88,194,125,0.28), transparent 60%);
+  animation: auroraA 28s ease-in-out infinite;
+  filter: blur(30px);
+}
+body::after {
+  background:
+    radial-gradient(45% 55% at 55% 95%, rgba(221,247,242,0.7), transparent 60%),
+    radial-gradient(30% 30% at 25% 75%, rgba(31,199,174,0.24), transparent 60%),
+    radial-gradient(30% 30% at 78% 70%, rgba(122,216,153,0.20), transparent 60%);
+  animation: auroraB 34s ease-in-out infinite;
+  filter: blur(40px);
+}
+@keyframes auroraA {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  33%     { transform: translate3d(3%, -2%, 0) scale(1.08); }
+  66%     { transform: translate3d(-2%, 2%, 0) scale(1.04); }
+}
+@keyframes auroraB {
+  0%,100% { transform: translate3d(0,0,0) scale(1); }
+  50%     { transform: translate3d(-3%, -3%, 0) scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after { animation: none; }
 }
 
 a { color: inherit; text-decoration: none; }
@@ -1672,4 +1708,158 @@ footer a { color: var(--health-teal); font-weight: 600; }
 @media (max-width: 900px) {
   .callout { flex-direction: column; padding: 20px; }
 }
+
+/* =============================================================
+   Theme toggle button — sun/moon, injected by theme.js
+   ============================================================= */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--white); border: 1px solid var(--border);
+  color: var(--trust-navy); cursor: pointer;
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--dur-1) var(--ease), border-color var(--dur-1),
+              background var(--dur-2), color var(--dur-2);
+}
+.theme-toggle:hover { border-color: var(--health-teal); transform: translateY(-1px) rotate(-8deg); }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle:focus-visible { outline: 3px solid rgba(31,174,154,0.55); outline-offset: 2px; }
+.side-footer .theme-toggle {
+  width: 100%; height: 40px; border-radius: 12px; gap: 10px;
+  justify-content: flex-start; padding: 0 12px;
+  background: var(--soft-cloud);
+}
+.side-footer .theme-toggle::after {
+  content: attr(data-label); font-size: 13px; font-weight: 600; color: var(--text-muted);
+}
+
+/* =============================================================
+   DARK MODE — variable overrides + surface overrides
+   ============================================================= */
+:root[data-theme="dark"] {
+  --trust-navy:     #E8EEF5;
+  --navy-2:         #C7D2E0;
+  --health-teal:    #2CD4B8;
+  --teal-2:         #40E6C7;
+  --wellness-green: #7DD89A;
+  --green-2:        #99E5B0;
+  --soft-sky:       rgba(44,212,184,0.14);
+  --soft-cloud:     rgba(255,255,255,0.04);
+  --text-gray:      #A6B3C4;
+  --text-muted:     #7A8697;
+  --white:          #0F2038;
+  --border:         rgba(255,255,255,0.09);
+  --border-2:       rgba(255,255,255,0.05);
+  --grad-teal:      linear-gradient(135deg, #2CD4B8 0%, #40E6C7 60%, #7DD89A 100%);
+  --grad-navy:      linear-gradient(135deg, #142c4f 0%, #1c3a68 100%);
+  --grad-mesh:      radial-gradient(60% 60% at 15% 10%, rgba(44,212,184,0.28), transparent 60%),
+                    radial-gradient(50% 60% at 90% 0%, rgba(125,216,154,0.22), transparent 60%),
+                    radial-gradient(80% 60% at 50% 100%, rgba(20,44,79,0.6), transparent 60%);
+  --shadow-xs:  0 1px 2px rgba(0,0,0,0.4);
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.35);
+  --shadow-md:  0 8px 32px rgba(0,0,0,0.45);
+  --shadow-lg:  0 20px 60px rgba(0,0,0,0.55);
+  --shadow-glow: 0 12px 40px rgba(44,212,184,0.4);
+}
+
+:root[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] {
+  background: linear-gradient(180deg, #06101F 0%, #0A182A 55%, #050D1A 100%);
+}
+
+[data-theme="dark"] body::before {
+  background:
+    radial-gradient(38% 42% at 15% 22%, rgba(44,212,184,0.24), transparent 60%),
+    radial-gradient(34% 40% at 85% 18%, rgba(125,216,154,0.18), transparent 60%);
+}
+[data-theme="dark"] body::after {
+  background:
+    radial-gradient(45% 55% at 55% 95%, rgba(23,63,95,0.55), transparent 60%),
+    radial-gradient(30% 30% at 25% 75%, rgba(44,212,184,0.18), transparent 60%),
+    radial-gradient(30% 30% at 78% 70%, rgba(125,216,154,0.14), transparent 60%);
+}
+
+/* Nav bars — hardcoded RGBAs need dark equivalents */
+[data-theme="dark"] .nav {
+  background: rgba(10,22,42,0.72);
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+[data-theme="dark"] .side-nav {
+  background: rgba(15,32,56,0.7);
+  border-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .side-nav a::after {
+  background: var(--white);
+  border-color: var(--border);
+  color: var(--trust-navy);
+}
+[data-theme="dark"] .pitch-hero .meta {
+  background: rgba(15,32,56,0.6);
+  border-color: var(--border);
+}
+
+/* Eyebrow, buttons, gradient text keep working, but fix a few surface hardcodes */
+[data-theme="dark"] .eyebrow {
+  background: var(--white);
+  border-color: var(--border);
+}
+[data-theme="dark"] .btn-outline {
+  background: var(--white); color: var(--trust-navy); border-color: var(--border);
+}
+[data-theme="dark"] .btn-outline:hover { color: var(--teal-2); border-color: var(--teal-2); }
+
+/* Compare table hover + header need to work on dark */
+[data-theme="dark"] .compare-row.head { background: rgba(255,255,255,0.04); }
+[data-theme="dark"] .compare-row:not(.head):hover { background: rgba(255,255,255,0.03); }
+[data-theme="dark"] .compare-cell:first-child { color: var(--trust-navy); }
+[data-theme="dark"] .cross { color: #d68b8b; }
+[data-theme="dark"] .partial { color: #d1a05a; }
+
+/* SDG card + featured tier need punched-up backgrounds so they don't blend into dark bg */
+[data-theme="dark"] .sdg-card {
+  background: linear-gradient(135deg, #0F2440 0%, #163358 100%);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+}
+[data-theme="dark"] .tier.featured {
+  background: linear-gradient(135deg, #133056 0%, #1a437a 100%);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* Process card idle icon bg needs a bit more presence in dark */
+[data-theme="dark"] .process-icon { background: rgba(44,212,184,0.15); color: var(--teal-2); }
+
+/* Callout left-border needs to stay teal, but the box needs the surface treatment */
+[data-theme="dark"] .callout { border-left-color: var(--teal-2); }
+
+/* Team position-open cards: keep the "recruiting" pattern readable */
+[data-theme="dark"] .team-card.position-open {
+  background: repeating-linear-gradient(-45deg,
+    rgba(255,255,255,0.02) 0 12px,
+    rgba(255,255,255,0.05) 12px 24px);
+  border-color: rgba(44,212,184,0.4);
+}
+
+/* Palette swatches (hex codes stay hex; card surface adapts) */
+[data-theme="dark"] .swatch-chip { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); }
+[data-theme="dark"] .swatch-code { color: var(--text-muted); }
+
+/* Sidebar rendered via app.js uses variables — but user-card avatar uses soft-cloud */
+[data-theme="dark"] .lang-menu { background: rgba(15,32,56,0.95); }
+[data-theme="dark"] .lang-option-code {
+  background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08);
+  color: var(--text-gray);
+}
+
+/* Selection */
+[data-theme="dark"] ::selection { background: rgba(44,212,184,0.35); color: var(--trust-navy); }
+
+/* Big-stat glow — the radial gradient inside needs to work on dark surface */
+[data-theme="dark"] .big-stat::before {
+  background: radial-gradient(circle at 50% 0%, rgba(44,212,184,0.18), transparent 60%);
+}
+
+/* Prevent flash of unstyled: hide body until theme.js applies data-theme */
+html:not([data-theme]) body { visibility: hidden; }
+
 
