@@ -76,7 +76,15 @@
       errBox.style.display = 'block';
       return;
     }
-    window.location = '/pages/dashboard.html';
+    // Success flash: play the checkmark animation, then redirect.
+    var flash = document.createElement('div');
+    flash.className = 'success-flash is-on';
+    flash.innerHTML =
+      '<lottie-player src="/lotties/success.json" background="transparent" speed="1" autoplay></lottie-player>' +
+      "<h3>You're all set!</h3>" +
+      '<p>Setting up your health hub…</p>';
+    document.body.appendChild(flash);
+    setTimeout(function () { window.location = '/pages/dashboard.html'; }, 1500);
   });
 </script>
 </body>
