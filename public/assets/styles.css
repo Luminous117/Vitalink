@@ -147,7 +147,7 @@ img, svg { display: block; max-width: 100%; }
   display: inline-flex; align-items: center; gap: 10px;
   font-weight: 800; letter-spacing: -0.02em; font-size: 20px;
 }
-.brand svg, .brand img { width: 34px; height: 34px; }
+.brand svg, .brand img { width: 34px; height: 34px; object-fit: contain; }
 .nav-links { display: flex; gap: 36px; align-items: center; }
 .nav-links a { color: var(--text-gray); font-weight: 500; font-size: 15px; transition: color var(--dur-1); }
 .nav-links a:hover { color: var(--trust-navy); }
@@ -2005,8 +2005,8 @@ lottie-player { display: block; }
   margin-right: 2px;
 }
 .lottie-hero-pulse {
-  position: absolute; right: 14px; top: 12px;
-  width: 52px; height: 52px;
+  position: absolute; right: 10px; top: 8px;
+  width: 76px; height: 76px;
   pointer-events: none;
 }
 .lottie-empty {

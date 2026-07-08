@@ -25,6 +25,16 @@
     }
   }
 
+  function refreshLogos() {
+    var t = document.documentElement.getAttribute('data-theme');
+    var srcLight = '/assets/logo.svg';
+    var srcDark = '/assets/logo-dark.svg';
+    var imgs = document.querySelectorAll('img[src*="/assets/logo"], img[data-logo]');
+    for (var i = 0; i < imgs.length; i++) {
+      imgs[i].src = t === 'dark' ? srcDark : srcLight;
+    }
+  }
+
   function makeBtn() {
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -36,6 +46,7 @@
       document.documentElement.setAttribute('data-theme', next);
       try { localStorage.setItem(KEY, next); } catch (e) {}
       refreshAllButtons();
+      refreshLogos();
     });
     return btn;
   }
@@ -56,6 +67,7 @@
       footers[j].insertBefore(makeBtn(), footers[j].firstChild);
     }
     refreshAllButtons();
+    refreshLogos();
   }
 
   if (document.readyState === 'loading') {
