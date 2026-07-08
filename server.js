@@ -21,7 +21,7 @@ const MIME = {
   ".woff2":"font/woff2",
 };
 
-function send(res, status, body, headers = {}) {
+function send (res, status, body, headers = {}) {
   res.writeHead(status, { "Cache-Control": "no-store", ...headers });
   res.end(body);
 }

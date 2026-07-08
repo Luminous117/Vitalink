@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reminders · VitaLink</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar" id="side"></aside>
+  <main class="main">
+    <div class="main-inner">
+
+      <div class="topbar fade-in">
+        <div class="topbar-head">
+          <h1>Reminders</h1>
+          <p>Meds, appointments, hydration, movement — nothing slips through.</p>
+        </div>
+      </div>
+
+      <div class="rem-layout">
+        <div class="panel rem-panel fade-in d1">
+          <div class="panel-head">
+            <div>
+              <h3>Your reminders</h3>
+              <p class="sub">Tap the circle to mark done, trash to remove.</p>
+            </div>
+          </div>
+          <div data-reminders="list"></div>
+        </div>
+
+        <div class="panel rem-panel fade-in d2">
+          <div class="panel-head">
+            <h3>Add a reminder</h3>
+          </div>
+          <form class="rem-form" data-reminders="form">
+            <div class="rem-form-grid">
+              <div class="field">
+                <label for="rem-type">Type</label>
+                <select id="rem-type" name="type" required>
+                  <option value="med">Medication</option>
+                  <option value="appt">Appointment</option>
+                  <option value="water">Hydration</option>
+                  <option value="move">Movement</option>
+                  <option value="sleep">Sleep</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="rem-time">Time</label>
+                <input id="rem-time" name="time" type="time" value="09:00" required />
+              </div>
+            </div>
+            <div class="rem-form-grid wide">
+              <div class="field">
+                <label for="rem-title">Reminder</label>
+                <input id="rem-title" name="title" type="text" placeholder="e.g. Vitamin D3 · 1000 IU" required />
+              </div>
+            </div>
+            <div class="rem-form-grid wide">
+              <div class="field">
+                <label for="rem-note">Notes (optional)</label>
+                <textarea id="rem-note" name="note" placeholder="Any details you want to remember"></textarea>
+              </div>
+            </div>
+            <div class="rem-form-grid wide">
+              <div class="field">
+                <label>Repeat on</label>
+                <div class="rem-days" data-rem-days></div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:8px;">Add reminder</button>
+            <p style="color:var(--text-muted);font-size:12.5px;margin-top:12px;text-align:center;">
+              Reminders are saved to your browser. A production build would sync to your account.
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="/assets/i18n.js"></script>
+<script src="/assets/app.js"></script>
+<script src="/assets/reminders.js"></script>
+</body>
+</html>

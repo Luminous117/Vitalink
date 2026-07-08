@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign in · VitaLink</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+
+<div class="onboard-wrap">
+  <div class="onboard-card fade-in">
+    <a href="/" class="brand">
+      <img src="/assets/logo.svg" alt="VitaLink" />
+      <span>VitaLink</span>
+    </a>
+    <h1>Welcome back.</h1>
+    <p>Sign in to open your health hub.</p>
+
+    <div id="signin-error" style="display:none; background:#fde8e8; color:#8a2020; padding:12px 14px; border-radius:12px; font-size:13.5px; margin-bottom:16px; text-align:left;"></div>
+
+    <form class="onboard-form" id="signin-form">
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" required autocomplete="username" />
+      </div>
+      <div class="field">
+        <label for="pass">Passphrase</label>
+        <input id="pass" type="password" placeholder="Your passphrase" required autocomplete="current-password" />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:8px;">Sign in →</button>
+    </form>
+
+    <p class="legal" style="margin-top:28px;">
+      Don't have an account yet?
+      <a href="/pages/onboarding.html">Create one</a>
+    </p>
+  </div>
+</div>
+
+<script src="/assets/auth.js"></script>
+<script src="/assets/i18n.js"></script>
+<script>
+  document.getElementById('signin-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var errBox = document.getElementById('signin-error');
+    errBox.style.display = 'none';
+    var res = window.VitalinkAuth.signIn({
+      email: document.getElementById('email').value,
+      passphrase: document.getElementById('pass').value,
+    });
+    if (!res.ok) {
+      errBox.textContent = res.error;
+      errBox.style.display = 'block';
+      return;
+    }
+    window.location = '/pages/dashboard.html';
+  });
+</script>
+</body>
+</html>

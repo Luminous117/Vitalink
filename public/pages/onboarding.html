@@ -20,30 +20,56 @@
       <span class="dot"></span>
       <span class="dot"></span>
     </div>
-    <h1>Welcome to your <span class="serif">health hub.</span></h1>
-    <p>Create an account in under a minute. No credit card required.</p>
+    <h1 data-i18n="onboard.title">Welcome to your health hub.</h1>
+    <p data-i18n="onboard.subtitle">Create an account in under a minute. No credit card required.</p>
 
-    <form class="onboard-form" onsubmit="event.preventDefault(); window.location='/pages/dashboard.html'">
+    <div id="signup-error" style="display:none; background:#fde8e8; color:#8a2020; padding:12px 14px; border-radius:12px; font-size:13.5px; margin-bottom:16px; text-align:left;"></div>
+
+    <form class="onboard-form" id="signup-form">
       <div class="field">
         <label for="name">Your name</label>
-        <input id="name" type="text" placeholder="Rohit Mahajan" required />
+        <input id="name" type="text" placeholder="Rohit Mahajan" required autocomplete="name" />
       </div>
       <div class="field">
         <label for="email">Email address</label>
-        <input id="email" type="email" placeholder="you@example.com" required />
+        <input id="email" type="email" placeholder="you@example.com" required autocomplete="email" />
       </div>
       <div class="field">
         <label for="pass">Create a passphrase</label>
-        <input id="pass" type="password" placeholder="At least 12 characters" required minlength="12" />
+        <input id="pass" type="password" placeholder="At least 12 characters" required minlength="12" autocomplete="new-password" />
       </div>
-      <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:12px;">Continue →</button>
+      <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:12px;">Create account →</button>
     </form>
 
-    <p class="legal">
-      By continuing, you agree to VitaLink's <a href="#">Terms</a> and <a href="#">Privacy Policy</a>. Your health data is encrypted end-to-end — we can't read it.
+    <p class="legal" style="margin-top:20px;">
+      Already have an account?
+      <a href="/pages/signin.html">Sign in</a>
+    </p>
+    <p class="legal" style="margin-top:12px;">
+      By continuing, you agree to VitaLink's <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
     </p>
   </div>
 </div>
 
+<script src="/assets/auth.js"></script>
+<script src="/assets/i18n.js"></script>
+<script>
+  document.getElementById('signup-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var errBox = document.getElementById('signup-error');
+    errBox.style.display = 'none';
+    var res = window.VitalinkAuth.signUp({
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      passphrase: document.getElementById('pass').value,
+    });
+    if (!res.ok) {
+      errBox.textContent = res.error;
+      errBox.style.display = 'block';
+      return;
+    }
+    window.location = '/pages/dashboard.html';
+  });
+</script>
 </body>
 </html>

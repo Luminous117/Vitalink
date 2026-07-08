@@ -1,4 +1,4 @@
-# VitaLink — One link to better health.
+# VitaLink — One link. Better health.
 
 A working web-app prototype built to your brand guide (Concept 1: Heart Link, full color palette).
 

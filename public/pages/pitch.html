@@ -34,10 +34,10 @@
       <span>VitaLink</span>
     </a>
     <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/pages/dashboard.html">App demo</a>
-      <a href="/pages/pitch.html" style="color: var(--health-teal); font-weight: 600;">Business plan</a>
-      <a href="/pages/onboarding.html" class="btn btn-primary">Try VitaLink</a>
+      <a href="/" data-i18n="nav.home">Home</a>
+      <a href="/pages/dashboard.html" data-i18n="nav.appDemo">App demo</a>
+      <a href="/pages/pitch.html" style="color: var(--health-teal); font-weight: 600;" data-i18n="nav.plan">Business plan</a>
+      <a href="/pages/onboarding.html" class="btn btn-primary" data-i18n="nav.tryVitaLink">Try VitaLink</a>
     </div>
   </div>
 </nav>
@@ -51,11 +51,11 @@
   <div class="container">
     <span class="eyebrow fade-in"><span class="eyebrow-dot"></span> Business Plan · 2026</span>
     <h1 class="fade-in d1">VitaLink Business Plan</h1>
-    <p class="subtitle fade-in d2">What we're building, who it's for, how it makes money, and what we think the next three years look like.</p>
+    <p class="subtitle fade-in d2">How we're making quality healthcare more accessible for unionized labor workers — and why unions are the fastest path to universal coverage.</p>
     <div class="meta fade-in d3">
-      <span><strong>Aligned with</strong> UN SDG 3: Good Health & Well-being</span>
+      <span><strong>SDG 3.8</strong> Universal Health Coverage</span>
       <span>·</span>
-      <span><strong>Category</strong> Personal Health Records</span>
+      <span><strong>Focus</strong> Unionized Workers</span>
       <span>·</span>
       <span><strong>Stage</strong> Working prototype</span>
     </div>
@@ -172,8 +172,8 @@
         <div class="label">Personal Health Records segment — the specific slice we're targeting</div>
       </div>
       <div class="big-stat reveal d2">
-        <div class="n"><span data-count="220" data-suffix="M">0</span></div>
-        <div class="label">US adults who could use a unified health record app</div>
+        <div class="n"><span data-count="60" data-suffix="M">0</span></div>
+        <div class="label">US union members and dependents — a fast lane to group-plan scale (BLS, AFL-CIO)</div>
       </div>
     </div>
   </div>
@@ -296,6 +296,17 @@
           <li>Refers other patients they meet in support groups</li>
         </ul>
       </div>
+      <div class="persona reveal d3">
+        <div class="persona-avatar mix">UW</div>
+        <div class="who">Wedge segment</div>
+        <h4>The unionized worker</h4>
+        <p class="quote">My union already negotiates my healthcare and dental. Now they cover a personal health record too — one login for everything.</p>
+        <ul>
+          <li>Aged 25–58, member of a labor union or trade group</li>
+          <li>Covered by their local at $3/mo per member — no friction to sign up</li>
+          <li>One contract onboards hundreds of members at once</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -348,6 +359,16 @@
         </ul>
       </div>
     </div>
+
+    <div class="callout reveal d2">
+      <div class="callout-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div>
+        <h4>Why we lead with unions</h4>
+        <p>Individual acquisition costs in health are brutal — usually $40–120 per user. Unions already negotiate healthcare, dental, and pensions for hundreds of members at a time, so one signed contract onboards a whole shop at a lower per-seat price. It's the fastest path to universal coverage (SDG 3.8) without waiting on government reform, and the biggest lever we can pull as a small team.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -364,7 +385,7 @@
       <div>
         <h3>The name</h3>
         <p><strong>Vita</strong> comes from the Latin word for life. <strong>Link</strong> points to the product's function: connecting records, providers, and daily health data.</p>
-        <p>The tagline is "One link to better health." It's short, it fits on an app icon caption, and it says what the product does.</p>
+        <p>The tagline is "One link. Better health." It's short, it fits on an app icon caption, and it says what the product does.</p>
       </div>
       <div>
         <h3>The logo</h3>
@@ -495,23 +516,23 @@
         <div class="team-role">Product · Design</div>
         <p class="team-bio">Led the concept, brand, and product design. Built out the prototype.</p>
       </div>
-      <div class="team-card reveal d1">
-        <div class="team-avatar green">T2</div>
-        <div class="team-name">[Teammate 2]</div>
-        <div class="team-role">Role</div>
-        <p class="team-bio">Short bio.</p>
+      <div class="team-card position-open reveal d1">
+        <div class="team-avatar">+</div>
+        <div class="team-name">Engineering</div>
+        <div class="team-role">Recruiting</div>
+        <p class="team-bio">Full-stack developer to lead FHIR integrations and mobile builds.</p>
       </div>
-      <div class="team-card reveal d2">
-        <div class="team-avatar navy">T3</div>
-        <div class="team-name">[Teammate 3]</div>
-        <div class="team-role">Role</div>
-        <p class="team-bio">Short bio.</p>
+      <div class="team-card position-open reveal d2">
+        <div class="team-avatar">+</div>
+        <div class="team-name">Partnerships</div>
+        <div class="team-role">Recruiting</div>
+        <p class="team-bio">Union and employer sales lead to run the group-plan pipeline.</p>
       </div>
-      <div class="team-card reveal d3">
-        <div class="team-avatar mix">T4</div>
-        <div class="team-name">[Teammate 4]</div>
-        <div class="team-role">Role</div>
-        <p class="team-bio">Short bio.</p>
+      <div class="team-card position-open reveal d3">
+        <div class="team-avatar">+</div>
+        <div class="team-name">Clinical advisor</div>
+        <div class="team-role">Recruiting</div>
+        <p class="team-bio">Practicing clinician (MD or NP) to validate summary logic and safety flows.</p>
       </div>
     </div>
   </div>
@@ -540,11 +561,12 @@
       <img src="/assets/logo.svg" alt="VitaLink" />
       <span>VitaLink</span>
     </a>
-    <p>One link to better health. &copy; 2026 VitaLink Team.</p>
+    <p>One link. Better health. &copy; 2026 VitaLink Team.</p>
     <p style="margin-top:6px;">Business Plan · <a href="/pages/dashboard.html">Open the app demo</a></p>
   </div>
 </footer>
 
+<script src="/assets/i18n.js"></script>
 <script src="/assets/pitch.js"></script>
 </body>
 </html>

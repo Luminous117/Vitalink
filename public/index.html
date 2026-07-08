@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VitaLink — One link to better health.</title>
-  <meta name="description" content="VitaLink connects your doctors, records, and daily wellness in one secure place. One link to better health." />
+  <title>VitaLink — One link. Better health.</title>
+  <meta name="description" content="VitaLink connects your doctors, records, and daily wellness in one secure place. One link. Better health." />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
@@ -17,11 +17,11 @@
       <span>VitaLink</span>
     </a>
     <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#how">How it works</a>
-      <a href="/pages/pitch.html">Business plan</a>
-      <a href="/pages/onboarding.html" class="btn btn-ghost">Sign in</a>
-      <a href="/pages/onboarding.html" class="btn btn-primary">Get started</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="/pages/pitch.html" data-i18n="nav.plan">Business plan</a>
+      <a href="/pages/signin.html" data-i18n="nav.signin">Sign in</a>
+      <a href="/pages/onboarding.html" class="btn btn-primary" data-i18n="nav.getStarted">Get started</a>
     </div>
   </div>
 </nav>
@@ -29,17 +29,17 @@
 <header class="hero">
   <div class="mesh-bg"></div>
   <div class="container">
-    <span class="eyebrow fade-in"><span class="eyebrow-dot"></span> HIPAA-aligned · End-to-end encrypted</span>
-    <h1 class="fade-in d1">One link to <span class="gradient-text">better health.</span></h1>
-    <p class="lead fade-in d2">Bring every doctor, prescription, lab result, and daily wellness metric into a single, calm dashboard. VitaLink turns scattered health data into clarity you can act on.</p>
+    <span class="eyebrow fade-in"><span class="eyebrow-dot"></span> <span data-i18n="hero.eyebrow">HIPAA-aligned · End-to-end encrypted</span></span>
+    <h1 class="fade-in d1"><span>One link.</span> <span class="gradient-text">Better health.</span></h1>
+    <p class="lead fade-in d2" data-i18n="hero.subtitle">Bring every doctor, prescription, lab result, and daily wellness metric into a single, calm dashboard. VitaLink turns scattered health data into clarity you can act on.</p>
     <div class="hero-cta fade-in d3">
-      <a href="/pages/onboarding.html" class="btn btn-primary btn-lg">Create free account →</a>
-      <a href="/pages/dashboard.html" class="btn btn-outline btn-lg">See live demo</a>
+      <a href="/pages/onboarding.html" class="btn btn-primary btn-lg" data-i18n="hero.cta1">Create free account →</a>
+      <a href="/pages/dashboard.html" class="btn btn-outline btn-lg" data-i18n="hero.cta2">See live demo</a>
     </div>
     <div class="hero-trust fade-in d4">
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No credit card</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Apple Health & Google Fit</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Delete data anytime</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="hero.trust1">No credit card</span></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="hero.trust2">Apple Health & Google Fit</span></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="hero.trust3">Delete data anytime</span></span>
     </div>
 
     <div class="hero-visual fade-in d5">
@@ -79,7 +79,7 @@
           <div class="phone-content">
             <div class="phone-hi">Good morning,</div>
             <div class="phone-name">Rohit</div>
-            <div class="mini-card">
+            <div class="mini-card pulse">
               <div class="mini-card-row">
                 <span class="mini-card-label">Resting heart rate</span>
                 <span class="badge green">Healthy</span>
@@ -119,9 +119,9 @@
 <section id="features" class="section">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><span class="eyebrow-dot"></span> The whole picture</span>
-      <h2>Health data, <span class="serif">finally</span> organized.</h2>
-      <p>Everything you'd normally chase across portals, paper folders, and apps — quietly unified.</p>
+      <span class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="features.eyebrow">The whole picture</span></span>
+      <h2 data-i18n="features.title">Health data, finally organized.</h2>
+      <p data-i18n="features.subtitle">Everything you'd normally chase across portals, paper folders, and apps — quietly unified.</p>
     </div>
 
     <div class="features">
@@ -202,11 +202,11 @@
   <div class="container">
     <div class="cta-band">
       <span class="eyebrow" style="background:rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color:var(--white);">
-        <span class="eyebrow-dot"></span> Ready when you are
+        <span class="eyebrow-dot"></span> <span data-i18n="cta.eyebrow">Ready when you are</span>
       </span>
-      <h2>Your health, in <span class="serif">one calm place.</span></h2>
+      <h2 data-i18n="cta.title">Your health, in one calm place.</h2>
       <p>Free forever for personal use. Family and clinician tiers coming soon.</p>
-      <a href="/pages/onboarding.html" class="btn btn-primary btn-lg">Get started free →</a>
+      <a href="/pages/onboarding.html" class="btn btn-primary btn-lg" data-i18n="cta.button">Get started free →</a>
     </div>
   </div>
 </section>
@@ -217,10 +217,11 @@
       <img src="/assets/logo.svg" alt="VitaLink" />
       <span>VitaLink</span>
     </a>
-    <p>One link to better health. &copy; 2026 VitaLink.</p>
+    <p><span data-i18n="footer.tagline">One link. Better health.</span> &copy; 2026 VitaLink.</p>
     <p style="margin-top:6px;">Prototype build — <a href="/pages/dashboard.html">Open the app demo</a></p>
   </div>
 </footer>
 
+<script src="/assets/i18n.js"></script>
 </body>
 </html>
