@@ -2285,6 +2285,35 @@ body.drawer-open { overflow: hidden; }
 }
 
 /* =============================================================
+   Demo-data notice — slim strip shown on every app page so
+   judges/visitors know all metrics are sample data
+   ============================================================= */
+.demo-notice {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; margin-bottom: 12px;
+  border-radius: 12px;
+  background: rgba(11,31,58,0.04);
+  border: 1px solid rgba(11,31,58,0.10);
+  color: var(--text-muted);
+  font-size: 13px; line-height: 1.45;
+  animation: fadeIn 0.4s var(--ease) backwards;
+}
+.demo-notice-icon {
+  flex-shrink: 0;
+  color: var(--health-teal);
+}
+.demo-notice-body { flex: 1; min-width: 0; }
+.demo-notice-body strong { font-weight: 700; color: var(--trust-navy); }
+[data-theme="dark"] .demo-notice {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.10);
+}
+[data-theme="dark"] .demo-notice-icon { color: var(--teal-2); }
+@media (max-width: 600px) {
+  .demo-notice { font-size: 12.5px; padding: 8px 12px; }
+}
+
+/* =============================================================
    Pitch section smoothing — kill per-section gradient tints in dark
    mode so the body aurora flows through without hard seams.
    The pitch HTML has inline `background: linear-gradient(...soft-sky...)`
@@ -2309,12 +2338,12 @@ body.drawer-open { overflow: hidden; }
    ============================================================= */
 .side-footer { display: flex; flex-direction: column; }
 .side-footer [data-lang-mount] { order: 1; margin-bottom: 50px !important; }
-.side-footer .theme-toggle { order: 2; }
+.side-footer .theme-toggle { order: 2; margin-top: -25px; }
 .side-footer #side-user { order: 3; }
 /* Same treatment inside the mobile marketing drawer */
 .mobile-drawer-controls { display: flex; flex-direction: column; }
 .mobile-drawer-controls [data-lang-mount] { order: 1; margin-bottom: 50px; }
-.mobile-drawer-controls .theme-toggle { order: 2; }
+.mobile-drawer-controls .theme-toggle { order: 2; margin-top: -25px; }
 .mobile-drawer-controls .mobile-drawer-cta { order: 3; margin-top: 12px; }
 
 /* =============================================================

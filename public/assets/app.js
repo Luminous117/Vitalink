@@ -76,10 +76,25 @@
     window.VitalinkI18n.mountPickers();
   }
 
+  // Demo-data notice: shown at the very top of every app page so judges/visitors
+  // understand this is a prototype with sample data.
+  var mainInner = document.querySelector(".main .main-inner");
+  if (mainInner && !mainInner.querySelector("[data-demo-notice]")) {
+    var notice = document.createElement("div");
+    notice.setAttribute("data-demo-notice", "");
+    notice.className = "demo-notice";
+    notice.innerHTML =
+      '<svg class="demo-notice-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>' +
+      '<div class="demo-notice-body">' +
+        '<strong>Preview mode.</strong> ' +
+        'All metrics shown are sample data — connect Apple Health to sync your real numbers.' +
+      "</div>";
+    mainInner.insertBefore(notice, mainInner.firstChild);
+  }
+
   // Guest-mode banner: if there's no signed-in user, show a subtle strip at the top
   // of the main content that explains this is a demo and links to sign-up.
   if (!user) {
-    var mainInner = document.querySelector(".main .main-inner");
     if (mainInner && !mainInner.querySelector("[data-guest-banner]")) {
       var banner = document.createElement("div");
       banner.setAttribute("data-guest-banner", "");
@@ -94,7 +109,9 @@
         '<button class="guest-banner-close" aria-label="Dismiss">' +
           '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>' +
         "</button>";
-      mainInner.insertBefore(banner, mainInner.firstChild);
+      var demoNotice = mainInner.querySelector("[data-demo-notice]");
+      if (demoNotice) demoNotice.after(banner);
+      else mainInner.insertBefore(banner, mainInner.firstChild);
       banner.querySelector(".guest-banner-close").addEventListener("click", function () {
         banner.remove();
       });
