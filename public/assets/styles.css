@@ -2277,6 +2277,30 @@ body.drawer-open { overflow: hidden; }
 }
 
 /* =============================================================
+   Floating language picker (bottom-left corner)
+   ============================================================= */
+.lang-picker-float {
+  position: fixed; bottom: 14px; left: 14px;
+  z-index: 45;
+}
+.lang-picker-float .lang-picker-btn {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: var(--shadow-sm);
+}
+.lang-picker-float .lang-menu {
+  left: 0; right: auto;
+  bottom: calc(100% + 8px); top: auto;
+}
+[data-theme="dark"] .lang-picker-float .lang-picker-btn {
+  background: rgba(15,32,56,0.85);
+}
+@media (max-width: 600px) {
+  .lang-picker-float { bottom: 10px; left: 10px; }
+}
+
+/* =============================================================
    Author credit — subtle corner tag on every page
    ============================================================= */
 .author-credit {

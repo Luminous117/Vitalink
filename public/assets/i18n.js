@@ -156,13 +156,10 @@
   }
 
   function mountPickers() {
-    document.querySelectorAll('.nav-links').forEach(nav => {
-      if (nav.querySelector('.lang-picker')) return;
-      const picker = buildPicker();
-      const anchor = nav.querySelector('.btn');
-      if (anchor) nav.insertBefore(picker, anchor);
-      else nav.appendChild(picker);
-    });
+    // Language picker is no longer auto-mounted in the top .nav-links
+    // (it was crowding the theme toggle + CTA). Only mounts in explicit
+    // [data-lang-mount] slots — see the fixed bottom-left slot injected
+    // by mobile-nav.js.
     document.querySelectorAll('[data-lang-mount]').forEach(el => {
       if (el.querySelector('.lang-picker')) return;
       el.appendChild(buildPicker());
