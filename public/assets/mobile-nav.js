@@ -129,19 +129,10 @@
     document.body.appendChild(c);
   }
 
-  function ensureLangFloat() {
-    if (document.querySelector('.lang-picker-float')) return;
-    var wrap = el('div', 'lang-picker-float');
-    wrap.setAttribute('data-lang-mount', '');
-    document.body.appendChild(wrap);
-    if (window.VitalinkI18n) window.VitalinkI18n.mountPickers();
-  }
-
   function mount() {
     ensureMobileTopbar();
     if (!isAppPage()) buildMarketingDrawer();
     ensureAuthorCredit();
-    ensureLangFloat();
     wireOpeners();
     // Close drawer on link click inside it
     document.addEventListener('click', function (e) {
