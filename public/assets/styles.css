@@ -133,7 +133,16 @@ img, svg { display: block; max-width: 100%; }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 76px;
+  padding-left: 4px; /* pull brand further left */
 }
+.nav .brand { margin-left: -6px; letter-spacing: -0.025em; }
+/* Give the language picker and theme toggle real breathing room */
+.nav-links { gap: 32px; }
+.nav-links .lang-picker { margin-left: 14px; }
+.nav-links .theme-toggle { margin-left: 4px; }
+.nav-links .lang-picker + .theme-toggle,
+.nav-links .theme-toggle + .lang-picker { margin-left: 16px; }
+.nav-links .btn { margin-left: 8px; }
 .brand {
   display: inline-flex; align-items: center; gap: 10px;
   font-weight: 800; letter-spacing: -0.02em; font-size: 20px;

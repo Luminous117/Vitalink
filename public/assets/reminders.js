@@ -91,8 +91,8 @@
       if (!state.length) {
         root.innerHTML = (
           '<div class="lottie-empty">' +
-            '<lottie-player src="/lotties/ghost.json" background="transparent" speed="1" loop autoplay></lottie-player>' +
-            '<h4>Nothing to do</h4>' +
+            '<lottie-player src="/lotties/panda-sleep.json" background="transparent" speed="1" loop autoplay style="width:220px;height:220px;"></lottie-player>' +
+            '<h4>Nothing to do — rest easy</h4>' +
             '<p>You\'re all caught up. Add your first reminder on the right.</p>' +
           '</div>'
         );
