@@ -2277,6 +2277,26 @@ body.drawer-open { overflow: hidden; }
 }
 
 /* =============================================================
+   Pitch section smoothing — kill per-section gradient tints in dark
+   mode so the body aurora flows through without hard seams.
+   The pitch HTML has inline `background: linear-gradient(...soft-sky...)`
+   on several sections; !important is needed to beat inline styles.
+   ============================================================= */
+[data-theme="dark"] .pitch-section[style*="linear-gradient"],
+[data-theme="dark"] .pitch-section[style*="soft-sky"],
+[data-theme="dark"] section.section[style*="soft-sky"] {
+  background: transparent !important;
+}
+/* Also in light mode, make the seam softer by fading the tint out
+   more gradually (extend to 30% transparent at each end). */
+.pitch-section[style*="linear-gradient(180deg, var(--soft-sky), transparent)"] {
+  background: linear-gradient(180deg, var(--soft-sky) 0%, rgba(221,247,242,0.35) 60%, transparent 100%) !important;
+}
+.pitch-section[style*="linear-gradient(180deg, transparent, var(--soft-sky))"] {
+  background: linear-gradient(180deg, transparent 0%, rgba(221,247,242,0.35) 40%, var(--soft-sky) 100%) !important;
+}
+
+/* =============================================================
    Floating language picker (bottom-left corner)
    ============================================================= */
 .lang-picker-float {
